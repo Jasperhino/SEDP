@@ -1,0 +1,20 @@
+1. How many iterations does your implementation need to get a medium error of < 0.01% for
+   the last 10000 iterations (means the result is within [3.1413, 3.1419])?
+
+Due to random number generation "luck" anywhere from 500000 to 27000000 iterations during testing.
+It seemed like there was no difference in iterations needed between the float, double (and long double) implementations.
+double and long double resolve to the same datatype (double precision float with 64bits on my system)
+
+2. List the most exact π representation using the C++ data-types float, double, and long
+   double along with their storage in bytes for your system.
+
+   (in-) Exact Output of float Pi: 3.14159274 used 4 bytes
+   (in-) Exact Output of double Pi: 3.1415926535897931 used 8 bytes
+   (in-) Exact Output of long double Pi: 3.1415926535897931 used 8 bytes
+
+3. How many bits of mantissa in a floating-point number are necessary to encode the first 20 decimal digits of π?
+
+The number of significant digits (the amount of digits needed to display a unique distinct value) equal s
+d = log_10(2^b)  where b is the amount of bits we use to encode the value. This means that we need at least b = log_2(10^d)
+bits to store a value of that precision. In this case that would be b = log_2(10^20) ~= 66.438 So we would need 67 bits
+of mantisse to encode the first 20 decimal digits of π.

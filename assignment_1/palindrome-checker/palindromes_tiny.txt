@@ -1,0 +1,4 @@
+thisisnopalindrome
+aba
+hallo
+abba

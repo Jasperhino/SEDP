@@ -1,0 +1,21 @@
+I used CLion and a CMakeLists file for my assignment: see CMakeLists.txt
+
+Output of verbose build:
+====================[ Build | ProviderLibraryTest | Debug ]=====================
+C:\Users\blumj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe --build D:\Studium\Master\SEDP\cmake-build-debug --target ProviderLibraryTest
+	C:\Users\blumj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -SD:\Studium\Master\SEDP -BD:\Studium\Master\SEDP\cmake-build-debug --check-build-system CMakeFiles\Makefile.cmake 0
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\Makefile2 /nologo -L                  ProviderLibraryTest
+	C:\Users\blumj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -SD:\Studium\Master\SEDP -BD:\Studium\Master\SEDP\cmake-build-debug --check-build-system CMakeFiles\Makefile.cmake 0
+	C:\Users\blumj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_progress_start D:\Studium\Master\SEDP\cmake-build-debug\CMakeFiles 4
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\Makefile2 /nologo -L                  CMakeFiles\ProviderLibraryTest.dir\all
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\ProviderLibrary.dir\build.make /nologo -L                  CMakeFiles\ProviderLibrary.dir\depend
+	C:\Users\blumj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_depends "NMake Makefiles" D:\Studium\Master\SEDP D:\Studium\Master\SEDP D:\Studium\Master\SEDP\cmake-build-debug D:\Studium\Master\SEDP\cmake-build-debug D:\Studium\Master\SEDP\cmake-build-debug\CMakeFiles\ProviderLibrary.dir\DependInfo.cmake --color=
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\ProviderLibrary.dir\build.make /nologo -L                  CMakeFiles\ProviderLibrary.dir\build
+[ 50%] Built target ProviderLibrary
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\ProviderLibraryTest.dir\build.make /nologo -L                  CMakeFiles\ProviderLibraryTest.dir\depend
+	C:\Users\blumj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_depends "NMake Makefiles" D:\Studium\Master\SEDP D:\Studium\Master\SEDP D:\Studium\Master\SEDP\cmake-build-debug D:\Studium\Master\SEDP\cmake-build-debug D:\Studium\Master\SEDP\cmake-build-debug\CMakeFiles\ProviderLibraryTest.dir\DependInfo.cmake --color=
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\ProviderLibraryTest.dir\build.make /nologo -L                  CMakeFiles\ProviderLibraryTest.dir\build
+[100%] Built target ProviderLibraryTest
+	C:\Users\blumj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_progress_start D:\Studium\Master\SEDP\cmake-build-debug\CMakeFiles 0
+
+Build finished
