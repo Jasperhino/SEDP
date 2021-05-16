@@ -9,7 +9,6 @@ add_executable(PI assignment_1/montecarlopi/montecarlopi.cpp)
 add_library(ProviderLibrary SHARED assignment_1/library/provider.cpp assignment_1/library/provider.h)
 add_executable(ProviderLibraryTest assignment_1/library/providerlibtest.cpp)
 target_link_libraries(ProviderLibraryTest ProviderLibrary)
-add_compile_options(/Za)
 add_executable(SYNTAX assignment_1/syntactic_sugar/syntax.cpp)
 
 add_custom_target(create_zip COMMAND

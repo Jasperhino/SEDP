@@ -8,16 +8,17 @@
 
 using namespace std::string_literals;
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-    if (argc < 2) {
+    if (argc < 2)
+    {
         std::cerr << "No regex passed" << std::endl;
 
         return -1;
     }
 
     // Input
-    
+
     const auto filename = "emails.txt"s;
     std::ifstream file(filename, std::ios::in);
 
@@ -54,26 +55,24 @@ int main(int argc, char* argv[])
     // Todo: filter
     std::smatch match;
     std::regex regex(argv[1]);
-    for (auto const & line  : lines) {
-        if(std::regex_search(line, match, regex)) {
-            std::cout << "matches for '" << line << "'\n";
-            std::cout << "Prefix: '" << match.prefix() << "'\n";
-            for (size_t i = 0; i < match.size(); ++i)
-                std::cout << i << ": " << match[i] << '\n';
-            std::cout << "Suffix: '" << match.suffix() << "\'\n\n";
+    for (auto const &line : lines)
+    {
+        if (std::regex_search(line, match, regex))
+        {
+            matches[match[match.size() - 1]]++;
         }
     }
 
-
     // Todo: count
-    
+
     // Todo: output
 
-    for (const auto & line : lines) {
-        std::cout << line << '\n';
+    for (const auto &match : matches)
+    {
+        std::cout << match.first << ": " << match.second << '\n';
     }
 
     std::cout.flush();
-    
+
     return 0;
 }

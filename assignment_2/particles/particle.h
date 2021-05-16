@@ -5,7 +5,6 @@
 #include <QtGui/QVector2D>
 #include <QtCore/qmath.h>
 
-
 // There are cells and particles: each cell is initialized
 // with a certain quota of energy of the overall energy g_energy.
 // When a cell has a high energy level, it is more likeley to
@@ -19,18 +18,20 @@
 // cell. Theryby cells are reloaded again and again and a cylce is
 // closed, causing continuous particle spawning...
 
-
 using time_point = std::chrono::high_resolution_clock::time_point;
 using secs = std::chrono::duration<float, std::chrono::seconds::period>;
 
+struct MemoryBlockManager;
 
 struct Particle
 {
-    QVector2D  position;
-    QVector2D  velocity;
-    time_point tod;     // time of death
-    float      energy;  // energy carrying
+    QVector2D position;
+    QVector2D velocity;
+    time_point tod; // time of death
+    float energy;   // energy carrying
 
     // ToDo: forward declare here
+    static MemoryBlockManager m;
+    void *operator new(std::size_t size);
+    void operator delete(void *);
 };
-
