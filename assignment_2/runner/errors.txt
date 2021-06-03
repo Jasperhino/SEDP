@@ -1,0 +1,3 @@
+Caught SIGFPE: Arithmetic Exception
+Caught SIGILL: Illegal Instruction
+Caught SIGSEGV: Segmentation Fault
