@@ -27,3 +27,21 @@ add_custom_target(create_zip COMMAND
 
 add_executable(REGEX assignment_2/regex-filter/regex-filter.cpp)
 
+add_custom_target(create_zip_2 COMMAND
+        ${CMAKE_COMMAND} -E tar "cfv" "assignment_2_2F8D.zip" --format=zip
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/regex-filter/regex-filter.cpp"
+
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/runner/runner.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/runner/errors.txt"
+
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/particles/particle.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/particles/particle.h"
+
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/graph/Graph.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/graph/Graph.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/graph/GraphFactory.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/graph/GraphFactory.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/assignment_2/graph/graph-test.cpp"
+        )
+
+add_subdirectory(assignment_3)

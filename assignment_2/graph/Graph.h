@@ -57,7 +57,7 @@ public:
     /*
      * @postcondition g2 is empty, i.e., does not contain any vertices or edges
      */
-    void merge(std::shared_ptr<Graph> g2);
+    void merge(std::unique_ptr<Graph> g2);
     std::shared_ptr<Graph> minimumSpanningTree() const;
 
     friend std::ostream &operator<<(std::ostream &stream, const Graph &graph);

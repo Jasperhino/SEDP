@@ -27,20 +27,20 @@ std::int32_t Vertex::id() const
 Edge::Edge(std::shared_ptr<Vertex> v0, std::shared_ptr<Vertex> v1, std::int32_t weight)
     : m_weight{weight}
 {
-    reset(v0, v1);
+    reset(std::move(v0), std::move(v1));
 }
 
 void Edge::reset(std::shared_ptr<Vertex> v0, std::shared_ptr<Vertex> v1)
 {
     if (v0 < v1)
     {
-        m_v0 = v0;
-        m_v1 = v1;
+        m_v0 = std::move(v0);
+        m_v1 = std::move(v1);
     }
     else
     {
-        m_v0 = v1;
-        m_v1 = v0;
+        m_v0 = std::move(v1);
+        m_v1 = std::move(v0);
     }
 }
 
@@ -84,7 +84,7 @@ void Graph::addEdge(std::shared_ptr<Edge> edge)
 }
 
 //TODO: maybe something with std::move
-void Graph::merge(std::shared_ptr<Graph> g2)
+void Graph::merge(std::unique_ptr<Graph> g2)
 {
     // Edge id for the purpose of creating a map/set
     using EdgeId = std::pair<std::int32_t, std::int32_t>;
@@ -126,7 +126,7 @@ void Graph::merge(std::shared_ptr<Graph> g2)
             edge->reset(v0, v1);
 
             edgeSet.insert(makeId(edge));
-            m_edges.emplace_back(edge);
+            m_edges.emplace_back(std::move(edge));
         }
     }
 }
