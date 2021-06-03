@@ -7,6 +7,8 @@
 struct TokenIterator
 {
     // Note: the second constructor parameter passed in main represents the characters that constitute separators
+public:
+    TokenIterator()
 };
 
 
@@ -16,7 +18,7 @@ struct TokenIterator
 
 
 // Note: if you compiler does not support std::forward_iterator yet, just replace "std::forward_iterator" with "typename"
-template<std::forward_iterator T>
+template<typename T>
 void test(T first, T last)
 {
     const auto minmax = std::minmax_element(first, last, [](const auto& a, const auto& b) {return size(a) < size(b); });

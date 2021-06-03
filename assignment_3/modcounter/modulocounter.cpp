@@ -3,34 +3,31 @@
 
 
 
-void ModuloCounter::_set_value(int value) {
-    if (value < 0) {
-
-    }
-    value = (value - min) % (max - min) + min;
+void ModuloCounter::set_value(int v) {
+    value = (v - min) % (max - min) + min;
 }
 
 
 std::ostream& operator<<(std::ostream &stream, const ModuloCounter &counter) {
-    stream << counter.value << " in [" << counter.min << ", " << counter.max << ")" << std::endl;
+    stream << counter.value << " in [" << counter.min << ", " << counter.max << ")";
     return stream;
 }
 
 ModuloCounter ModuloCounter::operator+(int other) {
     ModuloCounter copy = *this;
-    copy._set_value(copy.value + other);
+    copy.set_value(copy.value + other);
     return copy;
 }
 
 ModuloCounter ModuloCounter::operator-(int other) {
     ModuloCounter copy = *this;
-    copy._set_value(copy.value - other);
+    copy.set_value(copy.value - other);
     return copy;
 }
 
 ModuloCounter ModuloCounter::operator*(int other) {
     ModuloCounter copy = *this;
-    copy._set_value(copy.value * other);
+    copy.set_value(copy.value * other);
     return copy;
 }
 
@@ -63,17 +60,17 @@ ModuloCounter ModuloCounter::operator--(int) {
 
 
 ModuloCounter &ModuloCounter::operator+=(const int other) {
-    this->_set_value(this->value + other);
+    this->set_value(this->value + other);
     return *this;
 }
 
 ModuloCounter &ModuloCounter::operator-=(const int other) {
-    this->_set_value(this->value - other);
+    this->set_value(this->value - other);
     return *this;
 }
 
 ModuloCounter &ModuloCounter::operator=(const int v) {
-    this->_set_value(v);
+    this->set_value(v);
     return *this;
 }
 

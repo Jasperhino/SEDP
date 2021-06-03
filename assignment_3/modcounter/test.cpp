@@ -61,7 +61,7 @@ int main(int argc, char * argv[])
 
 
     // create ModuloCounter m6 with the interval [-11, -3) and initial value of m5
-    auto m6 = ModuloCounter(-11, 3, m5);
+    auto m6 = ModuloCounter(-11, 3, m5.get_initial_value());
     // print m6
     std::cout << m6 << std::endl;
 

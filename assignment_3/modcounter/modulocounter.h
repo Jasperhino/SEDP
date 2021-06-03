@@ -1,9 +1,9 @@
 class ModuloCounter {
 public:
     //constructors
-    ModuloCounter(int min, int max) : min(min), max(max), value(min) {}
-    ModuloCounter(int min, int max, int val) : min(min), max(max) {
-        _set_value(val);
+    ModuloCounter(int min, int max) : min(min), max(max), value(0), initial_value(0) {}
+    ModuloCounter(int min, int max, int val) : min(min), max(max), initial_value(val) {
+        set_value(val);
     }
 
     //copy constructor
@@ -18,9 +18,13 @@ public:
 
     //operators
     //copy assignment operator
-    ModuloCounter& operator=(ModuloCounter const& other) = default;
+    ModuloCounter& operator=(ModuloCounter const& other) {
+        value = other.value;
+        initial_value = other.value;
+        return *this;
+    };
 
-    ModuloCounter& operator=(const int v);
+    ModuloCounter& operator=(int v);
 
     friend std::ostream& operator<< (std::ostream& stream, const ModuloCounter& counter);
 
@@ -40,10 +44,12 @@ public:
     ModuloCounter& operator-=(int other);
 
 
-    void _set_value(int value);
+    void set_value(int value);
+    int get_initial_value() const { return initial_value; };
 
 protected:
+    int initial_value;
     int value;
-    int min;
-    int max;
+    const int min;
+    const int max;
 };
